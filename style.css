@@ -104,6 +104,7 @@ header {
 .language {
   font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 .language span{
   padding: 0 10px 0 10px;
