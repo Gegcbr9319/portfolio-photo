@@ -96,6 +96,7 @@
   .language {
     font-weight: bold;
     color: white;
+    cursor: pointer;
   }
   .themepicture{
       background-image: url("./assets/svg/carbon_sun.svg");
