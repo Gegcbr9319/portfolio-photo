@@ -36,7 +36,7 @@ function GetTranslate(event){
   } else {
     lang_active = event.target.textContent;
   }
-  setLocalStorage();
+  setLocalStorageLang();
     const data18 = document.querySelectorAll('[data-i18]');
     data18.forEach(element => {if (element.placeholder) {
       element.placeholder = i18Obj[lang_active][element.dataset.i18];
@@ -63,16 +63,20 @@ function GetTheme(event){
   link.href = "style1.css";
   
   }
-  setLocalStorage();
+  setLocalStorageTheme();
   
 };
 
-function setLocalStorage() {
-  localStorage.setItem('theme', link.getAttribute('href'));
+function setLocalStorageLang() {
+  
   
   localStorage.setItem('lang', document.querySelector('.activation').textContent );
 };
-window.addEventListener('beforeunload', setLocalStorage);
+
+function setLocalStorageTheme() {
+  localStorage.setItem('theme', link.getAttribute('href'));
+};
+window.addEventListener('beforeunload', setLocalStorageLang, setLocalStorageTheme);
 
 function getLocalStorage() {
   if (localStorage.getItem('lang')) {
